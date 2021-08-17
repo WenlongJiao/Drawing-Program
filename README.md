@@ -1,2 +1,2 @@
-# Drawing-Program
-MFC OpenGL
+# Drawing Program
+MFC
