@@ -1,12 +1,14 @@
-﻿  pch.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (DrawOpenGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  DialogCircle.cpp
   DialogLine.cpp
-  DrawOpenGL.cpp
-  DrawOpenGLDoc.cpp
-C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLDoc.cpp(169,19): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLDoc.cpp(169,16): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLDoc.cpp(173,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLDoc.cpp(173,17): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  DrawOpenGLView.cpp
+  DialogPolygon.cpp
+  DialogTriangle.cpp
+  Draw.cpp
+  DrawDoc.cpp
+  DrawView.cpp
+C:\Users\Wenlong\Documents\GitHub\Drawing-Program\DrawOpenGL\DrawView.cpp(196,14): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Wenlong\Documents\GitHub\Drawing-Program\DrawOpenGL\DrawView.cpp(256,14): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Wenlong\Documents\GitHub\Drawing-Program\DrawOpenGL\DrawView.cpp(259,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   MainFrm.cpp
   Generating Code...
-  DrawOpenGL.vcxproj -> C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\x64\Debug\DrawOpenGL.exe
+  DrawOpenGL.vcxproj -> C:\Users\Wenlong\Documents\GitHub\Drawing-Program\x64\Debug\Draw.exe

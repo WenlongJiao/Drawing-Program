@@ -24,6 +24,7 @@
     <Keyword>MFCProj</Keyword>
     <RootNamespace>DrawOpenGL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Draw</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -185,9 +186,11 @@
   <ItemGroup>
     <ClInclude Include="DialogCircle.h" />
     <ClInclude Include="DialogLine.h" />
-    <ClInclude Include="DrawOpenGL.h" />
-    <ClInclude Include="DrawOpenGLDoc.h" />
-    <ClInclude Include="DrawOpenGLView.h" />
+    <ClInclude Include="DialogPolygon.h" />
+    <ClInclude Include="DialogTriangle.h" />
+    <ClInclude Include="Draw.h" />
+    <ClInclude Include="DrawDoc.h" />
+    <ClInclude Include="DrawView.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="pch.h" />
@@ -197,9 +200,11 @@
   <ItemGroup>
     <ClCompile Include="DialogCircle.cpp" />
     <ClCompile Include="DialogLine.cpp" />
-    <ClCompile Include="DrawOpenGL.cpp" />
-    <ClCompile Include="DrawOpenGLDoc.cpp" />
-    <ClCompile Include="DrawOpenGLView.cpp" />
+    <ClCompile Include="DialogPolygon.cpp" />
+    <ClCompile Include="DialogTriangle.cpp" />
+    <ClCompile Include="Draw.cpp" />
+    <ClCompile Include="DrawDoc.cpp" />
+    <ClCompile Include="DrawView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -209,15 +214,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="DrawOpenGL.rc" />
+    <ResourceCompile Include="Draw.rc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="res\DrawOpenGL.rc2" />
+    <None Include="res\Draw.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\DrawOpenGL.ico" />
-    <Image Include="res\DrawOpenGLDoc.ico" />
+    <Image Include="res\Draw.ico" />
+    <Image Include="res\DrawDoc.ico" />
     <Image Include="res\Toolbar.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

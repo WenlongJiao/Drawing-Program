@@ -1,7 +1,7 @@
 #pragma once
 
-#include "DrawOpenGLDoc.h"
-#include "DrawOpenGLView.h"
+#include "DrawDoc.h"
+#include "DrawView.h"
 #include "MainFrm.h"
 
 // DialogLine dialog
@@ -20,7 +20,7 @@ public:
 #endif
 
 protected:
-	CDrawOpenGLDoc* m_Doc = NULL;
+	CDrawDoc* m_Doc = NULL;
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()

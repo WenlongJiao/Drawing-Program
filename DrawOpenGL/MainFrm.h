@@ -4,10 +4,12 @@
 
 #pragma once
 
-#include "DrawOpenGLDoc.h"
-#include "DrawOpenGLView.h"
+#include "DrawDoc.h"
+#include "DrawView.h"
 #include "DialogLine.h"
 #include "DialogCircle.h"
+#include "DialogTriangle.h"
+#include "DialogPolygon.h"
 
 class CMainFrame : public CFrameWnd
 {
@@ -44,9 +46,11 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 public:
+	CDrawDoc* m_Doc = NULL;
 	afx_msg void OnShapeLine();
-	CDrawOpenGLDoc* m_Doc = NULL;
 	afx_msg void OnShapeCircle();
+	afx_msg void OnShapeTriangle();
+	afx_msg void OnShapePolygon();
 };
 
 

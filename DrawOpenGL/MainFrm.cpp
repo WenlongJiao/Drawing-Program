@@ -4,7 +4,7 @@
 
 #include "pch.h"
 #include "framework.h"
-#include "DrawOpenGL.h"
+#include "Draw.h"
 
 #include "MainFrm.h"
 
@@ -20,6 +20,8 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_WM_CREATE()
 	ON_COMMAND(ID_SHAPE_LINE, &CMainFrame::OnShapeLine)
 	ON_COMMAND(ID_SHAPE_CIRCLE, &CMainFrame::OnShapeCircle)
+	ON_COMMAND(ID_SHAPE_TRIANGLE, &CMainFrame::OnShapeTriangle)
+	ON_COMMAND(ID_SHAPE_POLYGON, &CMainFrame::OnShapePolygon)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -101,7 +103,7 @@ void CMainFrame::Dump(CDumpContext& dc) const
 void CMainFrame::OnShapeLine()
 {
 	// TODO: Add your command handler code here
-	if (!m_Doc) m_Doc = (CDrawOpenGLDoc*)((CDrawOpenGLView*)GetActiveView())->GetDocument();
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
 
 	m_Doc->m_color = RGB(0, 0, 0);
 	DialogLine dlg;
@@ -112,9 +114,33 @@ void CMainFrame::OnShapeLine()
 void CMainFrame::OnShapeCircle()
 {
 	// TODO: Add your command handler code here
-	if (!m_Doc) m_Doc = (CDrawOpenGLDoc*)((CDrawOpenGLView*)GetActiveView())->GetDocument();
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
 
 	m_Doc->m_color = RGB(0, 0, 0);
 	DialogCircle dlg;
+	dlg.DoModal();
+}
+
+
+void CMainFrame::OnShapeTriangle()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_color = RGB(0, 0, 0);
+	DialogTriangle dlg;
+	dlg.DoModal();
+}
+
+
+
+
+void CMainFrame::OnShapePolygon()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_color = RGB(0, 0, 0);
+	DialogPolygon dlg;
 	dlg.DoModal();
 }

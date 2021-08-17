@@ -1,7 +1,7 @@
 #pragma once
 
-#include "DrawOpenGLDoc.h"
-#include "DrawOpenGLView.h"
+#include "DrawDoc.h"
+#include "DrawView.h"
 #include "MainFrm.h"
 
 // DialogCircle dialog
@@ -23,7 +23,7 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
-	CDrawOpenGLDoc* m_Doc = NULL;
+	CDrawDoc* m_Doc = NULL;
 
 public:
 	CMFCColorButton circle_color;

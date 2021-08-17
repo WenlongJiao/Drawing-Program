@@ -2,7 +2,7 @@
 //
 
 #include "pch.h"
-#include "DrawOpenGL.h"
+#include "Draw.h"
 #include "DialogCircle.h"
 #include "afxdialogex.h"
 
@@ -14,7 +14,7 @@ IMPLEMENT_DYNAMIC(DialogCircle, CDialogEx)
 DialogCircle::DialogCircle(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOG_CIRCLE, pParent)
 {
-	m_Doc = (CDrawOpenGLDoc*)((CDrawOpenGLView*)((CMainFrame*)AfxGetApp()->GetMainWnd())->GetActiveView())->GetDocument();
+	m_Doc = (CDrawDoc*)((CDrawView*)((CMainFrame*)AfxGetApp()->GetMainWnd())->GetActiveView())->GetDocument();
 }
 
 DialogCircle::~DialogCircle()

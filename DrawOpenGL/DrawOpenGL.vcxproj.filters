@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DrawOpenGL.h">
+    <ClInclude Include="Draw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
@@ -27,10 +27,10 @@
     <ClInclude Include="MainFrm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DrawOpenGLDoc.h">
+    <ClInclude Include="DrawDoc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DrawOpenGLView.h">
+    <ClInclude Include="DrawView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
@@ -45,18 +45,24 @@
     <ClInclude Include="DialogCircle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DialogTriangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogPolygon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DrawOpenGL.cpp">
+    <ClCompile Include="Draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MainFrm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DrawOpenGLDoc.cpp">
+    <ClCompile Include="DrawDoc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DrawOpenGLView.cpp">
+    <ClCompile Include="DrawView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
@@ -68,23 +74,29 @@
     <ClCompile Include="DialogCircle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DialogTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogPolygon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="DrawOpenGL.rc">
+    <ResourceCompile Include="Draw.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\DrawOpenGL.rc2">
+    <None Include="res\Draw.rc2">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\DrawOpenGLDoc.ico">
+    <Image Include="res\DrawDoc.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\DrawOpenGL.ico">
+    <Image Include="res\Draw.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\Toolbar.bmp">
