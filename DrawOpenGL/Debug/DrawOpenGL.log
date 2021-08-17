@@ -1,0 +1,5 @@
+﻿  DrawOpenGLView.cpp
+C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLView.cpp(159,14): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLView.cpp(191,14): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLView.cpp(194,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  DrawOpenGL.vcxproj -> C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\Debug\DrawOpenGL.exe

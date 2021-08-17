@@ -1,0 +1,12 @@
+﻿  pch.cpp
+  DialogLine.cpp
+  DrawOpenGL.cpp
+  DrawOpenGLDoc.cpp
+C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLDoc.cpp(169,19): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLDoc.cpp(169,16): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLDoc.cpp(173,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\DrawOpenGL\DrawOpenGLDoc.cpp(173,17): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  DrawOpenGLView.cpp
+  MainFrm.cpp
+  Generating Code...
+  DrawOpenGL.vcxproj -> C:\Users\Wenlong\Documents\Visual Studio 2019\Projects\DrawOpenGL\x64\Debug\DrawOpenGL.exe
