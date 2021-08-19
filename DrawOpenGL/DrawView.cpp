@@ -114,6 +114,9 @@ CDrawDoc* CDrawView::GetDocument() const // non-debug version is inline
 // CDrawView message handlers
 
 CPoint oldpoint, newpoint, originpoint;
+
+
+
 std::vector<CPoint> polygon_vtx;
 
 
@@ -171,6 +174,11 @@ void CDrawView::OnLButtonDown(UINT nFlags, CPoint point)
 
 		break;
 	case 6:
+		oldpoint = point;
+		newpoint = point;
+
+		break;
+	case 7:
 		oldpoint = point;
 		newpoint = point;
 
@@ -243,6 +251,13 @@ void CDrawView::OnLButtonUp(UINT nFlags, CPoint point)
 		m_Doc->v_ellipse.push_back(CDrawDoc::d_ellipse(oldpoint, newpoint, m_Doc->m_size, m_Doc->m_color));
 
 		break;
+	case 7:
+		dc1->Rectangle(oldpoint.x, oldpoint.y, newpoint.x, newpoint.y);
+
+		m_Doc->rectangle_cpen(dc2, m_Doc->m_color, oldpoint, newpoint, m_Doc->m_size);
+		m_Doc->v_rectangle.push_back(CDrawDoc::d_rectangle(oldpoint, newpoint, m_Doc->m_size, m_Doc->m_color));
+
+		break;
 	}
 	
 
@@ -256,7 +271,7 @@ void CDrawView::OnLButtonUp(UINT nFlags, CPoint point)
 void CDrawView::OnMouseMove(UINT nFlags, CPoint point)
 {
 	// TODO: Add your message handler code here and/or call default
-	CDC* dc1 = GetDC(), * dc2 = GetDC();
+	CDC* dc1 = GetDC();
 	int index = -1;
 	dc1->SetROP2(R2_NOT);
 
@@ -298,8 +313,13 @@ void CDrawView::OnMouseMove(UINT nFlags, CPoint point)
 		newpoint = point;
 		dc1->Arc(CRect(oldpoint.x, oldpoint.y, newpoint.x, newpoint.y), CPoint(0, 0), CPoint(0, 0));
 	}
+	else if (nFlags == MK_LBUTTON && m_Doc->m_type == 7)
+	{
+		dc1->Rectangle(CRect(oldpoint, newpoint));
+		newpoint = point;
+		dc1->Rectangle(CRect(oldpoint, newpoint));
+	}
 
-	ReleaseDC(dc2);
 	ReleaseDC(dc1);
 	CView::OnMouseMove(nFlags, point);
 }
@@ -320,3 +340,6 @@ void CDrawView::OnLButtonDblClk(UINT nFlags, CPoint point)
 	ReleaseDC(dc1);
 	CView::OnLButtonDblClk(nFlags, point);
 }
+
+
+

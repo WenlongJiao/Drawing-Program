@@ -140,6 +140,22 @@ public:
 		}
 	};
 
+	struct d_rectangle
+	{
+		CPoint x0, y0;
+		COLORREF color;
+		int size;
+
+		d_rectangle() {}
+		d_rectangle(CPoint x0, CPoint y0, int size, COLORREF color)
+		{
+			this->x0 = x0;
+			this->y0 = y0;
+			this->size = size;
+			this->color = color;
+		}
+	};
+
 
 
 public:
@@ -152,9 +168,10 @@ public:
 	std::vector<d_circle> v_circle;
 	std::vector<d_polygon> v_polygon;
 	std::vector<d_ellipse> v_ellipse;
+	std::vector<d_rectangle> v_rectangle;
 
 	// 1 = point, 2 = line, 3 = line, 41 = random triangle
-	// 5 = polygon, 6 = ellipse
+	// 5 = polygon, 6 = ellipse, 7 = rectangle
 	int m_type;
 
 	// color
@@ -183,4 +200,5 @@ public:
 	void SetSearchContent(const CString& value);
 #endif // SHARED_HANDLERS
 	void dot(CDC* pDC, COLORREF color, int x, int y, int size);
+	void rectangle_cpen(CDC* pDC, COLORREF color, CPoint x0, CPoint y0, int size);
 };

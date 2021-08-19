@@ -23,6 +23,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_COMMAND(ID_SHAPE_TRIANGLE, &CMainFrame::OnShapeTriangle)
 	ON_COMMAND(ID_SHAPE_POLYGON, &CMainFrame::OnShapePolygon)
 	ON_COMMAND(ID_SHAPE_ELLIPSE, &CMainFrame::OnShapeEllipse)
+	ON_COMMAND(ID_SHAPE_RECTANGLE, &CMainFrame::OnShapeRectangle)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -154,5 +155,16 @@ void CMainFrame::OnShapeEllipse()
 
 	m_Doc->m_color = RGB(0, 0, 0);
 	DialogEllipse dlg;
+	dlg.DoModal();
+}
+
+
+void CMainFrame::OnShapeRectangle()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_color = RGB(0, 0, 0);
+	DialogRectangle dlg;
 	dlg.DoModal();
 }

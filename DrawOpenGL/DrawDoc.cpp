@@ -176,10 +176,33 @@ void CDrawDoc::ellipse_cpen(CDC* pDC, COLORREF color, CPoint x0, CPoint y0, int 
 
 	pDC->Arc(CRect(x0.x, x0.y, y0.x, y0.y), CPoint(0, 0), CPoint(0, 0));
 	pDC->SelectObject(pOldPen);
-
-	int i;
-
 }
+
+
+void CDrawDoc::rectangle_cpen(CDC* pDC, COLORREF color, CPoint x0, CPoint y0, int size)
+{
+	// TODO: Add your implementation code here.
+	CPen cpen;
+	cpen.CreatePen(PS_SOLID, size, color);
+	CPen* pOldPen = (CPen*)pDC->SelectObject(&cpen);
+	CBrush* pOldBrush = (CBrush*)pDC->SelectStockObject(NULL_BRUSH);
+	
+	//pDC->MoveTo(x0);
+	//pDC->LineTo(CPoint(x0.x, y0.y));
+	//pDC->MoveTo(CPoint(x0.x, y0.y));
+	//pDC->LineTo(y0);
+	//pDC->MoveTo(y0);
+	//pDC->LineTo(CPoint(y0.x, x0.y));
+	//pDC->MoveTo(CPoint(y0.x, x0.y));
+	//pDC->LineTo(x0);
+
+	pDC->Rectangle(CRect(x0, y0));
+	pDC->SelectObject(pOldBrush);
+	pDC->SelectObject(pOldPen);
+}
+
+
+
 
 
 
@@ -196,3 +219,6 @@ void CDrawDoc::dot(CDC* pDC, COLORREF color, int x, int y, int size)
 	cpen.DeleteObject();
 	return;
 }
+
+
+
