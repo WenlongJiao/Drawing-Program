@@ -127,10 +127,12 @@ void CDrawView::OnLButtonDown(UINT nFlags, CPoint point)
 	case 2:
 		oldpoint = point;
 		newpoint = point;
+		
 		break;
 	case 3:
 		oldpoint = point;
 		newpoint = point;
+		
 		break;
 	case 41:
 		if (m_Doc->is_d_polygon == FALSE && m_Doc->tri_vtx == 1)
@@ -166,6 +168,13 @@ void CDrawView::OnLButtonDown(UINT nFlags, CPoint point)
 			polygon_vtx.clear();
 			polygon_vtx.push_back(originpoint);
 		}
+
+		break;
+	case 6:
+		oldpoint = point;
+		newpoint = point;
+
+		break;
 	}
 
 	ReleaseDC(dc1);
@@ -195,7 +204,7 @@ void CDrawView::OnLButtonUp(UINT nFlags, CPoint point)
 	{
 		int radius = std::sqrt((newpoint.x - oldpoint.x) * (newpoint.x - oldpoint.x) + ((newpoint.y - oldpoint.y) * (newpoint.y - oldpoint.y)));
 
-		dc1->Arc(CRect(oldpoint.x - radius, oldpoint.y - radius, oldpoint.x + radius, oldpoint.y + radius), CPoint(0, 0), CPoint(0, 0));
+		dc1->Arc(CRect(oldpoint.x - radius, oldpoint.y + radius, oldpoint.x + radius, oldpoint.y - radius), CPoint(0, 0), CPoint(0, 0));
 
 		m_Doc->circle_cpen(dc2, m_Doc->m_color, oldpoint, radius, m_Doc->m_size);
 		m_Doc->v_circle.push_back(CDrawDoc::d_circle(oldpoint, radius, m_Doc->m_size, m_Doc->m_color));
@@ -226,6 +235,14 @@ void CDrawView::OnLButtonUp(UINT nFlags, CPoint point)
 			m_Doc->line_cpen(dc2, m_Doc->m_color, oldpoint, newpoint, m_Doc->m_size);
 			oldpoint = newpoint;
 		}
+
+		break;
+	case 6:
+		dc1->Arc(CRect(oldpoint.x, oldpoint.y, newpoint.x, newpoint.y), CPoint(0, 0), CPoint(0, 0));
+		m_Doc->ellipse_cpen(dc2, m_Doc->m_color, oldpoint, newpoint, m_Doc->m_size);
+		m_Doc->v_ellipse.push_back(CDrawDoc::d_ellipse(oldpoint, newpoint, m_Doc->m_size, m_Doc->m_color));
+
+		break;
 	}
 	
 
@@ -254,10 +271,10 @@ void CDrawView::OnMouseMove(UINT nFlags, CPoint point)
 	else if (nFlags == MK_LBUTTON && m_Doc->m_type == 3)
 	{
 		int radius = std::sqrt((newpoint.x - oldpoint.x) * (newpoint.x - oldpoint.x) + (newpoint.y - oldpoint.y) * (newpoint.y - oldpoint.y));
-		dc1->Arc(CRect(oldpoint.x - radius, oldpoint.y - radius, oldpoint.x + radius, oldpoint.y + radius), CPoint(0, 0), CPoint(0, 0));
+		dc1->Arc(CRect(oldpoint.x - radius, oldpoint.y + radius, oldpoint.x + radius, oldpoint.y - radius), CPoint(0, 0), CPoint(0, 0));
 		newpoint = point;
 		radius = std::sqrt((newpoint.x - oldpoint.x) * (newpoint.x - oldpoint.x) + (newpoint.y - oldpoint.y) * (newpoint.y - oldpoint.y));
-		dc1->Arc(CRect(oldpoint.x - radius, oldpoint.y - radius, oldpoint.x + radius, oldpoint.y + radius), CPoint(0, 0), CPoint(0, 0));
+		dc1->Arc(CRect(oldpoint.x - radius, oldpoint.y + radius, oldpoint.x + radius, oldpoint.y - radius), CPoint(0, 0), CPoint(0, 0));
 	}
 	else if (m_Doc->is_d_polygon == TRUE && m_Doc->m_type == 41)
 	{
@@ -274,6 +291,12 @@ void CDrawView::OnMouseMove(UINT nFlags, CPoint point)
 		newpoint = point;
 		dc1->MoveTo(oldpoint);
 		dc1->LineTo(newpoint);
+	}
+	else if (nFlags == MK_LBUTTON && m_Doc->m_type == 6)
+	{
+		dc1->Arc(CRect(oldpoint.x, oldpoint.y, newpoint.x, newpoint.y), CPoint(0, 0), CPoint(0, 0));
+		newpoint = point;
+		dc1->Arc(CRect(oldpoint.x, oldpoint.y, newpoint.x, newpoint.y), CPoint(0, 0), CPoint(0, 0));
 	}
 
 	ReleaseDC(dc2);

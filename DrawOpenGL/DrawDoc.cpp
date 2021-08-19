@@ -138,6 +138,8 @@ void CDrawDoc::Dump(CDumpContext& dc) const
 // CDrawDoc commands
 
 
+
+// cpen function
 void CDrawDoc::line_cpen(CDC* pDC, COLORREF color, CPoint p1, CPoint p2, int size)
 {
 	CPen cpen;
@@ -162,6 +164,21 @@ void CDrawDoc::circle_cpen(CDC* pDC, COLORREF color, CPoint p0, int radius, int 
 	pDC->Arc(CRect(p0.x - radius, p0.y - radius, p0.x + radius, p0.y + radius), CPoint(0, 0), CPoint(0, 0));
 	pDC->SelectObject(pOldPen);
 	cpen.DeleteObject();
+}
+
+
+
+void CDrawDoc::ellipse_cpen(CDC* pDC, COLORREF color, CPoint x0, CPoint y0, int size)
+{
+	CPen cpen;
+	cpen.CreatePen(PS_SOLID, size, color);
+	CPen* pOldPen = (CPen*)pDC->SelectObject(&cpen);
+
+	pDC->Arc(CRect(x0.x, x0.y, y0.x, y0.y), CPoint(0, 0), CPoint(0, 0));
+	pDC->SelectObject(pOldPen);
+
+	int i;
+
 }
 
 

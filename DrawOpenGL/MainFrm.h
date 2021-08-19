@@ -10,6 +10,7 @@
 #include "DialogCircle.h"
 #include "DialogTriangle.h"
 #include "DialogPolygon.h"
+#include "DialogEllipse.h"
 
 class CMainFrame : public CFrameWnd
 {
@@ -51,6 +52,7 @@ public:
 	afx_msg void OnShapeCircle();
 	afx_msg void OnShapeTriangle();
 	afx_msg void OnShapePolygon();
+	afx_msg void OnShapeEllipse();
 };
 
 

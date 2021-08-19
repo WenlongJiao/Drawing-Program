@@ -124,24 +124,46 @@ public:
 		}
 	};
 
+	struct d_ellipse
+	{
+		CPoint x0, y0;
+		COLORREF color;
+		int size;
+
+		d_ellipse() {};
+		d_ellipse(CPoint x0, CPoint y0, int size, COLORREF color)
+		{
+			this->x0 = x0;
+			this->y0 = y0;
+			this->size = size;
+			this->color = color;
+		}
+	};
+
 
 
 public:
 	
+	double pi = acos(-1.0);
+
 	// Store all drawing content
 
 	std::vector<d_line> v_line;
 	std::vector<d_circle> v_circle;
 	std::vector<d_polygon> v_polygon;
+	std::vector<d_ellipse> v_ellipse;
 
 	// 1 = point, 2 = line, 3 = line, 41 = random triangle
-	// 5 = polygon
+	// 5 = polygon, 6 = ellipse
 	int m_type;
 
+	// color
 	COLORREF m_color;
+
+	// thickness
 	int m_size;
 
-	// drawing polygon?
+	// is drawing polygon?
 	BOOL is_d_polygon = FALSE;
 
 	// vertex num of triangle
@@ -150,6 +172,7 @@ public:
 	// cpen function
 	void line_cpen(CDC* pDC, COLORREF color, CPoint p1, CPoint p2, int size);
 	void circle_cpen(CDC* pDC, COLORREF color, CPoint p0, int radius, int size);
+	void ellipse_cpen(CDC* pDC, COLORREF color, CPoint x0, CPoint y0, int size);
 
 
 

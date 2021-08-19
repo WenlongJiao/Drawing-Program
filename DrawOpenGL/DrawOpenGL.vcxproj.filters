@@ -51,6 +51,9 @@
     <ClInclude Include="DialogPolygon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DialogEllipse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Draw.cpp">
@@ -78,6 +81,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DialogPolygon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogEllipse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

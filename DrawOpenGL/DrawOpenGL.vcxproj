@@ -185,6 +185,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DialogCircle.h" />
+    <ClInclude Include="DialogEllipse.h" />
     <ClInclude Include="DialogLine.h" />
     <ClInclude Include="DialogPolygon.h" />
     <ClInclude Include="DialogTriangle.h" />
@@ -199,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DialogCircle.cpp" />
+    <ClCompile Include="DialogEllipse.cpp" />
     <ClCompile Include="DialogLine.cpp" />
     <ClCompile Include="DialogPolygon.cpp" />
     <ClCompile Include="DialogTriangle.cpp" />
