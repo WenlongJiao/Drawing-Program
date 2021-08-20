@@ -161,6 +161,25 @@ void CDrawView::OnLButtonDown(UINT nFlags, CPoint point)
 		}
 		
 		break;
+	case 42:
+		oldpoint = point;
+		newpoint = point;
+
+		break;
+	case 43:
+		oldpoint = point;
+		newpoint = point;
+
+		break;
+	case 44:
+	{
+		CPoint tri_ver[3] = { CPoint(point.x + 100 * sqrt(3), point.y + 100), CPoint(point.x - 100 * sqrt(3), point.y + 100), CPoint(point.x, point.y - 200) };
+
+		m_Doc->triangle_cpen(dc1, m_Doc->m_color, tri_ver, m_Doc->m_size);
+		m_Doc->v_triangle.push_back(CDrawDoc::d_triangle(tri_ver, m_Doc->m_size, m_Doc->m_color));
+
+		break;
+	}
 	case 5:
 		if (m_Doc->is_d_polygon == FALSE)
 		{
@@ -233,6 +252,24 @@ void CDrawView::OnLButtonUp(UINT nFlags, CPoint point)
 		}
 		
 		break;
+	case 42:
+	{
+		CPoint tri_ver[3] = { oldpoint, newpoint, CPoint(oldpoint.x, newpoint.y) };
+		// dc1->Polygon(tri_ver, 3);
+
+		m_Doc->triangle_cpen(dc2, m_Doc->m_color, tri_ver, m_Doc->m_size);
+		m_Doc->v_triangle.push_back(CDrawDoc::d_triangle(tri_ver, m_Doc->m_size, m_Doc->m_color));
+
+		break;
+	}
+	case 43:
+	{
+		CPoint tri_ver[3] = { oldpoint, newpoint, CPoint(2 * oldpoint.x - newpoint.x, newpoint.y) };
+		m_Doc->triangle_cpen(dc2, m_Doc->m_color, tri_ver, m_Doc->m_size);
+		m_Doc->v_triangle.push_back(CDrawDoc::d_triangle(tri_ver, m_Doc->m_size, m_Doc->m_color));
+
+		break;
+	}
 	case 5:
 		if (m_Doc->is_d_polygon == TRUE)
 		{
@@ -298,6 +335,20 @@ void CDrawView::OnMouseMove(UINT nFlags, CPoint point)
 		newpoint = point;
 		dc1->MoveTo(oldpoint);
 		dc1->LineTo(newpoint);
+	}
+	else if (nFlags == MK_LBUTTON && m_Doc->m_type == 42)
+	{
+		CPoint tri_ver[3] = { oldpoint, newpoint, CPoint(oldpoint.x, newpoint.y) };
+		dc1->Polygon(tri_ver, 3);
+		newpoint = point;
+		dc1->Polygon(tri_ver, 3);
+	}
+	else if (nFlags == MK_LBUTTON && m_Doc->m_type == 43)
+	{
+		CPoint tri_ver[3] = { oldpoint, newpoint, CPoint(2 * oldpoint.x - newpoint.x, newpoint.y) };
+		dc1->Polygon(tri_ver, 3);
+		newpoint = point;
+		dc1->Polygon(tri_ver, 3);
 	}
 	else if (m_Doc->is_d_polygon == TRUE && m_Doc->m_type == 5)
 	{

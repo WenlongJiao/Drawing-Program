@@ -157,6 +157,23 @@ public:
 	};
 
 
+	struct d_triangle
+	{
+		CPoint tri_ver[3];
+		COLORREF color;
+		int size;
+
+		d_triangle() {}
+		d_triangle(CPoint tri_ver[3], int size, COLORREF color)
+		{
+			this->tri_ver[0] = tri_ver[0];
+			this->tri_ver[1] = tri_ver[1];
+			this->tri_ver[2] = tri_ver[2];
+			this->size = size;
+			this->color = color;
+		}
+	};
+
 
 public:
 	
@@ -169,8 +186,10 @@ public:
 	std::vector<d_polygon> v_polygon;
 	std::vector<d_ellipse> v_ellipse;
 	std::vector<d_rectangle> v_rectangle;
+	std::vector<d_triangle> v_triangle;
 
-	// 1 = point, 2 = line, 3 = line, 41 = random triangle
+	// 1 = point, 2 = line, 3 = line
+	// 41 = random triangle, 42 = right triangle, 43 = isosceles, 44 = equilateral
 	// 5 = polygon, 6 = ellipse, 7 = rectangle
 	int m_type;
 
@@ -190,6 +209,7 @@ public:
 	void line_cpen(CDC* pDC, COLORREF color, CPoint p1, CPoint p2, int size);
 	void circle_cpen(CDC* pDC, COLORREF color, CPoint p0, int radius, int size);
 	void ellipse_cpen(CDC* pDC, COLORREF color, CPoint x0, CPoint y0, int size);
+	void triangle_cpen(CDC* pDC, COLORREF color, CPoint points[3], int size);
 
 
 

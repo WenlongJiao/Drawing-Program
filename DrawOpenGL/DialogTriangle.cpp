@@ -31,6 +31,9 @@ void DialogTriangle::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(DialogTriangle, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_RANDOM_TRIANGLE, &DialogTriangle::OnClickedButtonRandomTriangle)
 	ON_BN_CLICKED(IDC_MFCCOLORBUTTON1, &DialogTriangle::OnClickedMfccolorbutton1)
+	ON_BN_CLICKED(IDC_BUTTON_RIGHT_TRIANGLE, &DialogTriangle::OnClickedButtonRightTriangle)
+	ON_BN_CLICKED(IDC_BUTTON_ISOSCELES_TRIANGLE, &DialogTriangle::OnClickedButtonIsoscelesTriangle)
+	ON_BN_CLICKED(IDC_BUTTON_EQUILATERAL_TRIANGLE, &DialogTriangle::OnClickedButtonEquilateralTriangle)
 END_MESSAGE_MAP()
 
 
@@ -57,3 +60,45 @@ void DialogTriangle::OnClickedButtonRandomTriangle()
 	EndDialog(0);
 }
 
+
+
+void DialogTriangle::OnClickedButtonRightTriangle()
+{
+	// TODO: Add your control notification handler code here
+	m_Doc->m_type = 42;
+	m_Doc->m_size = GetDlgItemInt(IDC_EDIT1);
+	if (m_Doc->m_size <= 0)
+	{
+		m_Doc->m_size = 1;
+	}
+
+	EndDialog(0);
+}
+
+
+void DialogTriangle::OnClickedButtonIsoscelesTriangle()
+{
+	// TODO: Add your control notification handler code here
+	m_Doc->m_type = 43;
+	m_Doc->m_size = GetDlgItemInt(IDC_EDIT1);
+	if (m_Doc->m_size <= 0)
+	{
+		m_Doc->m_size = 1;
+	}
+
+	EndDialog(0);
+}
+
+
+void DialogTriangle::OnClickedButtonEquilateralTriangle()
+{
+	// TODO: Add your control notification handler code here
+	m_Doc->m_type = 44;
+	m_Doc->m_size = GetDlgItemInt(IDC_EDIT1);
+	if (m_Doc->m_size <= 0)
+	{
+		m_Doc->m_size = 1;
+	}
+
+	EndDialog(0);
+}

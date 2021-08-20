@@ -28,4 +28,7 @@ public:
 	afx_msg void OnClickedButtonRandomTriangle();
 	afx_msg void OnClickedMfccolorbutton1();
 	CMFCColorButton line_color;
+	afx_msg void OnClickedButtonRightTriangle();
+	afx_msg void OnClickedButtonIsoscelesTriangle();
+	afx_msg void OnClickedButtonEquilateralTriangle();
 };

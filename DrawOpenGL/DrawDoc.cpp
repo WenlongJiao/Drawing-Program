@@ -201,6 +201,18 @@ void CDrawDoc::rectangle_cpen(CDC* pDC, COLORREF color, CPoint x0, CPoint y0, in
 	pDC->SelectObject(pOldPen);
 }
 
+void CDrawDoc::triangle_cpen(CDC* pDC, COLORREF color, CPoint points[3], int size)
+{
+	CPen cpen;
+	cpen.CreatePen(PS_SOLID, size, color);
+	CPen* pOldPen = (CPen*)pDC->SelectObject(&cpen);
+	CBrush* pOldBrush = (CBrush*)pDC->SelectStockObject(NULL_BRUSH);
+
+	pDC->Polygon(points, 3);
+	pDC->SelectObject(pOldBrush);
+	pDC->SelectObject(pOldPen);
+}
+
 
 
 
