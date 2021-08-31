@@ -25,6 +25,7 @@ DialogEllipse::~DialogEllipse()
 void DialogEllipse::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_MFCCOLORBUTTON1, ellipse_color);
 }
 
 

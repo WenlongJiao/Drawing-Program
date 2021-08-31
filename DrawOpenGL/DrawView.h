@@ -52,6 +52,7 @@ protected:
 	CDrawDoc* m_Doc = NULL;
 public:
 	afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
+	afx_msg void OnPaint();
 };
 
 #ifndef _DEBUG  // debug version in DrawView.cpp

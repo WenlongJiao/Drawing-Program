@@ -24,6 +24,19 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_COMMAND(ID_SHAPE_POLYGON, &CMainFrame::OnShapePolygon)
 	ON_COMMAND(ID_SHAPE_ELLIPSE, &CMainFrame::OnShapeEllipse)
 	ON_COMMAND(ID_SHAPE_RECTANGLE, &CMainFrame::OnShapeRectangle)
+	ON_COMMAND(ID_SHAPE_SQUARE, &CMainFrame::OnShapeSquare)
+	ON_COMMAND(ID_BUTTON_CLEAR, &CMainFrame::OnButtonClear)
+	ON_COMMAND(ID_BUTTON_MOUSE, &CMainFrame::OnButtonMouse)
+	ON_COMMAND(ID_BUTTON_TRANSLATE, &CMainFrame::OnButtonTranslate)
+	ON_COMMAND(ID_BUTTON_ROTATE, &CMainFrame::OnButtonRotate)
+	ON_COMMAND(ID_BUTTON_SCALE, &CMainFrame::OnButtonScale)
+	ON_COMMAND(ID_BUTTON_SYM_LR, &CMainFrame::OnButtonSymLr)
+	ON_COMMAND(ID_BUTTON_SYM_UD, &CMainFrame::OnButtonSymUd)
+	ON_COMMAND(ID_BUTTON_FILL, &CMainFrame::OnButtonFill)
+	ON_COMMAND(ID_TRANSFORM_ROTATE, &CMainFrame::OnTransformRotate)
+	ON_COMMAND(ID_TRANSFORM_SCALE, &CMainFrame::OnTransformScale)
+	ON_COMMAND(ID_TRANSFORM_TRANLATE, &CMainFrame::OnTransformTranlate)
+	ON_COMMAND(ID_CHANGEBORDERCOLOR_CHANGEBORDERCOLOR, &CMainFrame::OnChangebordercolorChangebordercolor)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -166,5 +179,148 @@ void CMainFrame::OnShapeRectangle()
 
 	m_Doc->m_color = RGB(0, 0, 0);
 	DialogRectangle dlg;
+	dlg.DoModal();
+}
+
+
+void CMainFrame::OnShapeSquare()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_color = RGB(0, 0, 0);
+	DialogSquare dlg;
+	dlg.DoModal();
+}
+
+
+void CMainFrame::OnButtonClear()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc)
+		m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->v_line.clear();
+	m_Doc->v_circle.clear();
+	m_Doc->v_ellipse.clear();
+	m_Doc->v_polygon.clear();
+	((CDrawView*)GetActiveView())->Invalidate(TRUE);
+	m_Doc->selected_point = -1;
+	m_Doc->selected_line = -1;
+	m_Doc->selected_circle = -1;
+	m_Doc->selected_ellipse = -1;
+	m_Doc->selected_polygon = -1;
+}
+
+
+void CMainFrame::OnButtonMouse()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc)
+		m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_type = 0;
+	m_Doc->m_color = RGB(0, 0, 0);
+	m_Doc->is_d_polygon = FALSE;
+}
+
+
+void CMainFrame::OnButtonTranslate()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_type = 100;
+}
+
+
+void CMainFrame::OnButtonRotate()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_type = 200;
+}
+
+
+void CMainFrame::OnButtonScale()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_type = 300;
+}
+
+
+void CMainFrame::OnButtonSymLr()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_type = 401;
+}
+
+
+void CMainFrame::OnButtonSymUd()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_type = 402;
+}
+
+
+void CMainFrame::OnButtonFill()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc)
+		m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_color = RGB(0, 0, 0);
+	DialogFill dlg;
+	dlg.DoModal();
+}
+
+
+void CMainFrame::OnTransformRotate()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_color = RGB(0, 0, 0);
+	DialogRotate dlg;
+	dlg.DoModal();
+}
+
+
+void CMainFrame::OnTransformScale()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_color = RGB(0, 0, 0);
+	DialogScale dlg;
+	dlg.DoModal();
+}
+
+
+void CMainFrame::OnTransformTranlate()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_color = RGB(0, 0, 0);
+	DialogTranslate dlg;
+	dlg.DoModal();
+}
+
+
+void CMainFrame::OnChangebordercolorChangebordercolor()
+{
+	// TODO: Add your command handler code here
+	if (!m_Doc) m_Doc = (CDrawDoc*)((CDrawView*)GetActiveView())->GetDocument();
+
+	m_Doc->m_color = RGB(0, 0, 0);
+	DialogBorderColor dlg;
 	dlg.DoModal();
 }

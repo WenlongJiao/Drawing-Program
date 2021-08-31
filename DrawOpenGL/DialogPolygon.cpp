@@ -25,6 +25,7 @@ DialogPolygon::~DialogPolygon()
 void DialogPolygon::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_MFCCOLORBUTTON1, line_color);
 }
 
 

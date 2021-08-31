@@ -184,11 +184,17 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DialogBorderColor.h" />
     <ClInclude Include="DialogCircle.h" />
     <ClInclude Include="DialogEllipse.h" />
+    <ClInclude Include="DialogFill.h" />
     <ClInclude Include="DialogLine.h" />
     <ClInclude Include="DialogPolygon.h" />
     <ClInclude Include="DialogRectangle.h" />
+    <ClInclude Include="DialogRotate.h" />
+    <ClInclude Include="DialogScale.h" />
+    <ClInclude Include="DialogSquare.h" />
+    <ClInclude Include="DialogTranslate.h" />
     <ClInclude Include="DialogTriangle.h" />
     <ClInclude Include="Draw.h" />
     <ClInclude Include="DrawDoc.h" />
@@ -200,11 +206,17 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DialogBorderColor.cpp" />
     <ClCompile Include="DialogCircle.cpp" />
     <ClCompile Include="DialogEllipse.cpp" />
+    <ClCompile Include="DialogFill.cpp" />
     <ClCompile Include="DialogLine.cpp" />
     <ClCompile Include="DialogPolygon.cpp" />
     <ClCompile Include="DialogRectangle.cpp" />
+    <ClCompile Include="DialogRotate.cpp" />
+    <ClCompile Include="DialogScale.cpp" />
+    <ClCompile Include="DialogSquare.cpp" />
+    <ClCompile Include="DialogTranslate.cpp" />
     <ClCompile Include="DialogTriangle.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="DrawDoc.cpp" />
@@ -228,6 +240,7 @@
     <Image Include="res\Draw.ico" />
     <Image Include="res\DrawDoc.ico" />
     <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\toolbar1.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

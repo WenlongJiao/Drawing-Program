@@ -25,6 +25,7 @@ DialogRectangle::~DialogRectangle()
 void DialogRectangle::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_MFCCOLORBUTTON1, rectangle_color);
 }
 
 
